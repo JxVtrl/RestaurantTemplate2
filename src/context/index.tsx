@@ -1,9 +1,9 @@
-import React, {
+import {
   createContext,
   useContext,
   useEffect,
   useState,
-  useRef,
+  // useRef,
 } from "react";
 import SteakWithTomato from "../assets/images/steak-with-tomato.png";
 import SalmonSalad from "../assets/images/salmon-salad.png";
@@ -52,7 +52,6 @@ export function AppProvider({ children }: any) {
 
     return () => clearInterval(interval);
   }, []);
-
 
   const [activeNav, setActiveNav] = useState(0);
 
