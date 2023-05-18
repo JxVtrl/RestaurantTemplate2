@@ -7,4 +7,6 @@ export const MainContainer = styled.div`
 
     padding: 0 75px;
     height: 100vh;
+
+    position: relative;
 `

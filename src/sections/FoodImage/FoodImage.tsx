@@ -2,15 +2,12 @@ import React, { useEffect } from "react";
 
 import * as S from "./FoodImage.styles";
 import { useApp } from "../../context";
-import { Discount } from "../../components";
 
 const FoodImage: React.FC = () => {
   const { foodIndex, foodVariants } = useApp();
   const { image } = foodVariants[foodIndex];
 
   const imageRef = React.useRef<HTMLImageElement>(null);
-
-
 
   useEffect(() => {
     if (imageRef.current) {
@@ -31,7 +28,6 @@ const FoodImage: React.FC = () => {
   return (
     <S.FoodImageContainer>
       <S.FoodImage ref={imageRef} src={image} />
-      <Discount/>
     </S.FoodImageContainer>
   );
 };
