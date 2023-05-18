@@ -38,6 +38,22 @@ const AppContext = createContext<AppContextData>({} as any);
 
 export function AppProvider({ children }: any) {
   const [foodIndex, setFoodIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFoodIndex((prevState) => {
+        if (prevState === 3) {
+          return 0;
+        } else {
+          return prevState + 1;
+        }
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+
   const [activeNav, setActiveNav] = useState(0);
 
   const foodVariants = [
